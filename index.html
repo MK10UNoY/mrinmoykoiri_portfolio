@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="shortcut icon" href="assets/rocketico.svg" type="image/x-icon">
+    <title>Mrinmoy_K</title>
+    <style>
+        .scrollForMore {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            /* background-image: linear-gradient(#053a8a, transparent); */
+            border-radius: 50%;
+            filter: url(#goey);
+            z-index: 1;
+        }
+
+        .particles {
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background-image: linear-gradient(90deg, #f00, #0ff);
+            border-radius: 50%;
+            animation: blast 2s ease forwards;
+            z-index: 1;
+        }
+
+        @keyframes blast {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(var(--x), var(--y));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <section class="home">
+            <div class="HL1">
+                <div class="navbar">
+                    <a href="/" class="bubble">Home</a>
+                    <a href="#about" class="bubble">About</a>
+                    <a href="#projects" class="bubble">Projects</a>
+                    <a href="#contacts" class="bubble">Contact Us</a>
+                </div>
+            </div>
+            <div class="HL2">
+                <div class="logo" style="flex-direction: column;justify-content: space-evenly;font-size: 6em;">
+                    Mrinmoy Koiri<p style="background-image:linear-gradient(90deg,rgb(0, 0, 0),#770000);
+                            background-clip: text;color: transparent;font-family: Impact, Haettenschweiler, 'Arial Bold', sans-serif;
+                            font-weight: 500;"><br>
+                        Web-Developer
+                    </p>
+                </div>
+                <div class="myskills">
+                    <span>HTML5</span>|
+                    <span>CSS</span>|
+                    <span>JS</span>|
+                    <span>TW</span>|
+                    <span>React</span>|
+                    <span>3JS</span>|
+                    <span>Kotlin</span>|
+                    <span>SQL</span>
+                </div>
+            </div>
+            <!-- <div class="scrollForMore">Scroll</div> -->
+        </section>
+
+
+        <div class="about" id="about">
+            <div class="contentBx">
+                <h2 class="heading">About</h2>
+                <div id="abttext">
+                    Greetings,myself Mrinmoy Koiri.Here's a bit about what I do....
+                    With a blend of creativity and technical expertise, I transform ideas into functional and visually
+                    appealing websites. Whether it’s front-end magic with HTML, CSS, and JavaScript, or diving into
+                    back-end technologies, I thrive on solving challenges and bringing digital visions from design files
+                    lying in Figma to just a simple idea in one's mind.
+                </div>
+            </div>
+            <div class="imgBx">
+                <div class="selfimg"></div>
+            </div>
+        </div>
+
+        <div class="projects" id="projects">
+            <div id="mywork" class="mywork">My Projects</div>
+            <div class="project1">
+                <div class="info1">
+                    <h1>Mausam2.0</h1>
+                    <br><br>
+                    <p>Mausam2.0 is a real time application which can track your location and display you the local
+                        weather.There are also fetaures of dark-light modes, search bars, etc. for ease of viewing</p>
+                    <a href="https://mk10unoy.github.io/Mausam2.0/" target="_blank" rel="noopener">
+                        <button>Visit Site</button>
+                    </a>
+                </div>
+
+                <div class="projectimage1"></div>
+            </div>
+            <div class="project2">
+                <div class="projectimage2"></div>
+                <div class="info2"></div>
+            </div>
+        </div>
+
+        <section class="checkthisout">
+            <H2>Check this out</H2>
+            <div class="cards">
+                <div class="card1">
+                    <iframe class="card1f" src="./crazycursor.html"></iframe>
+                    <details>
+                    <summary> Bubble Generator</summary>
+                    <p><a href="https://github.com/MK10UNoY/StandaloneCSSJSeffects">Get Code</a></p>
+                </details>
+            </div>
+                <div class="card2">
+                    <iframe class="card2f" src="./liquidblast.html"></iframe>
+                    <details>
+                        <summary> Click Slime Splash</summary>
+                        <p><a href="https://github.com/MK10UNoY/StandaloneCSSJSeffects">Get Code</a></p>
+                    </details>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contacts">
+            <h2>Contact Me</h2>
+            <div class="contactform">
+                <div class="form" data-sal="slide-right" data-sal-delay="300">
+                    <div class="inputBx">
+                        <input type="text" name="" placeholder="Full Name">
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="" placeholder="Email Address">
+                    </div>
+                    <div class="inputBx">
+                        <input type="text" name="" placeholder="Mobile Number">
+                    </div>
+                    <div class="inputBx">
+                        <textarea placeholder="Write your Message here"></textarea>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Send" name="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer">
+            <div class="links" id="links">
+                <div>Designed & Developed by Mrinmoy Koiri</div>
+                <div class="icons">
+                    <a href="https://github.com/MK10UNoY/mausam.github.io" target="_blank">
+                        <img class="gitico" src="assets/giticon.svg"></img>
+                    </a>
+                    <a href="https://github.com/MK10UNoY/mausam.github.io" target="_blank"></a>
+                    <img class="fbico" src="assets/fbico.svg"></img>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mrinmoy-koiri-a1a03327b/" target="_blank">
+                        <img class="linkedinico" src="assets/linkedico.svg">
+                        </img>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js" type="text/javaScript">
+    </script>
+    <script type="module" src="js/cubeforworld.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on("click", function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $("html, body").animate(
+                        {
+                            scrollTop: $(hash).offset().top
+                        },
+                        1000, // Duration in milliseconds
+                        function () {
+                            // Add hash (#) to URL when done scrolling
+                            window.location.hash = hash;
+                        }
+                    );
+                }
+            });
+        });
+        // Liquid blast
+        let circle = document.querySelector('.scrollForMore');
+
+        circle.addEventListener('click', () => {
+            for (let i = 0; i < 50; i++) {
+                let particles = document.createElement('i');
+                particles.classList.add('particles');
+                document.body.append(particles);
+                // Adding the DOM elements
+                let randomX = (Math.random() - 0.5) * window.innerWidth;
+                let randomY = (Math.random() - 0.5) * window.innerHeight;
+                // choosing the random coordinates
+                particles.style.setProperty('--x', randomX + 'px');
+                particles.style.setProperty('--y', randomY + 'px');
+                // assigning the position to dom elements
+                let randomSize = Math.random() * 60 + 10;
+                particles.style.width = randomSize + 'px';
+                particles.style.height = randomSize + 'px';
+                // Randomizing the size
+                let duration = Math.round() * 3 + 2;
+                particles.style.animation = `blast ${duration}s ease forwards`;
+
+
+                document.body.appendChild(particles);
+                setTimeout(() => {
+                    particles.remove();
+                }, 5000)
+            }
+        });
+    </script>
+</body>
+
+</html>

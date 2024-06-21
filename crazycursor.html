@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cursor</title>
+    <style>
+        body {
+            background-color: #1f1f1f;
+            display: flex;
+            overflow: hidden;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            height: 50vh;
+            width: 80vw;
+            background: #565656;
+            overflow: hidden;
+            border-radius: 5%;
+        }
+
+        j {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(#0f0,#00ffff,#0f0);
+            border-radius: 50%;
+            pointer-events: none;
+            overflow: hidden;
+            animation: sparkles 2s linear forwards;
+            z-index: 1;
+        }
+
+        @keyframes sparkles {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translate(var(--x), var(--y));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        let box = document.querySelector('.box');
+        function spark(event) {
+            let j = document.createElement('j');
+            j.style.left = (event.pageX) + 'px';
+            j.style.top = (event.pageY) + 'px';
+            j.style.scale = `${Math.random() * 2 + 1}`;
+            j.style.setProperty('--x', getRandomTransitionValue());
+            j.style.setProperty('--y', getRandomTransitionValue());
+            //  ....
+
+            box.appendChild(j);
+
+            setTimeout(() => {
+                box.removeChild(j);
+            }, 2000)
+        }
+
+        function getRandomTransitionValue() {
+            return `${Math.random() * 400 - 200}px`;
+        }
+
+        box.addEventListener('mousemove', spark);
+        // box.addEventListener('mousemove',()=>{console.log('MOved');});
+
+    </script>
+</body>
+
+</html>

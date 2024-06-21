@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiquidBlast</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            scroll-snap-type: proximity;
+        }
+        :root{
+            --bg: rgb(24, 26, 30);
+            --sun: rgb(207, 197, 4);
+            --col1: rgb(207, 35, 32);
+            --col2: rgb(7, 222, 233);
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: var(--bg);
+            overflow: hidden;
+            filter:  url(#goey) url(#gooey);
+        }
+        .circle{
+            position: fixed;
+            width: 50px;
+            height: 50px;
+            background-image: linear-gradient(90deg,var(--col1),var(--col2));
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .particles{
+            position: absolute;
+            height: 2px;
+            width: 2px;
+            background-image: linear-gradient(90deg,var(--col1),var(--col2));
+            border-radius: 50%;
+            animation: blast 2s ease forwards;
+            z-index: -1;
+        }
+        @keyframes blast {
+            0%,100%{
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate(var(--x),var(--y));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"></div>
+    <svg>
+        <filter id="gooey">
+            <feSpecularLighting
+              result="specOut"
+              specularExponent="20"
+              lighting-color="var(--sun)">
+            <fePointLight x="25" y="50" z="20" />
+            </feSpecularLighting>
+            <feComposite
+              in="SourceGraphic"
+              in2="specOut"
+              operator="arithmetic"
+              k1="0"
+              k2="1"
+              k3="1"
+              k4="0" />
+        </filter>
+        <filter id="goey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10"></feGaussianBlur>
+            <feColorMatrix values="1 0 0 0 0
+                                   0 1 0 0 0
+                                   0 0 1 0 0
+                                   0 0 0 50 -10"></feColorMatrix>
+        </filter>
+    </svg>
+    <script>
+        let circle = document.querySelector('.circle');
+        circle.addEventListener('click',()=>{
+            for(let i=0 ;i<50;i++){
+                let particles = document.createElement('i');
+                particles.classList.add('particles');
+                document.body.append(particles);
+                // Adding the DOM elements
+                let randomX= (Math.random() - 0.5)*window.innerWidth;
+                let randomY= (Math.random() - 0.5)*window.innerHeight;
+                // choosing the random coordinates
+                particles.style.setProperty('--x',randomX+'px');
+                particles.style.setProperty('--y',randomY+'px');
+                // assigning the position to dom elements
+                let randomSize= Math.random() * 30 + 10;
+                particles.style.width = randomSize+'px';
+                particles.style.height = randomSize+'px';
+                // Randomizing the size
+                let duration = Math.round() * 3 + 2;
+                particles.style.animation = `blast ${duration}s ease forwards`;
+
+
+                document.body.appendChild(particles);
+                setTimeout(()=>{
+                    particles.remove();
+                },5000)
+            }
+        });
+    </script>
+</body>
+</html>
